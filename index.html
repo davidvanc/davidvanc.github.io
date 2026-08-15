@@ -75,19 +75,28 @@
         <div class="body">
           <h3>wpscatcher</h3>
           <p class="tag">Raspberry Pi Zero 2 W &middot; Python &middot; e-ink</p>
-          <p>Een router met een WPS-knop geeft je een verbinding, maar geen wachtwoord
-            dat je kan doorgeven. wpscatcher verbindt bij het opstarten via WPS en zet
-            de verkregen gegevens als QR-code op een e-ink schermpje. Scannen is de
-            snelle weg; het wachtwoord staat er in mono voluit bij, want een desktop
-            zonder camera kan niet scannen.</p>
-          <p>Twee details die het bruikbaar maken. E-ink houdt zijn beeld vast zonder
-            stroom, dus een uitgeschakeld toestel toont je wachtwoord gewoon verder —
-            bij een nette stop wist het scherm zichzelf. En zodra de QR er staat heeft
-            het toestel niets meer te doen: met <code>shutdown_after</code> sluit het
-            zichzelf af, zodat er geen bestandssysteem meer draait op het moment dat
-            je de stekker uittrekt. Dat is wat SD-kaarten sloopt.</p>
-          <p>De QR-grootte is per paneel doorgemeten (2,13" tot 7,5"), zodat het
-            wachtwoord erbij tonen niet ten koste gaat van de scanbaarheid.</p>
+          <p>Heel soms wordt bij een installatie de juiste wifi-configuratie niet op
+            de modem geladen. Er staat dan enkel het willekeurige netwerk uit de
+            fabrieksinstellingen, en die sleutel kan ik niet opzoeken: als
+            onderaannemer heb ik daar geen toegang toe in de tools op mijn laptop. De
+            lijn ligt er dan wel, maar de klant staat zonder wifi en ik kan het bezoek
+            niet afronden.</p>
+          <p>De modem heeft daar zelf een oplossing voor: de WPS-knop, die precies
+            bedoeld is om een toestel te laten aansluiten zonder dat iemand het
+            wachtwoord intikt. Alleen krijg je zo een verbinding en geen wachtwoord
+            dat je aan de klant kan doorgeven. Dat is het gat dat wpscatcher dicht: hij
+            verbindt via WPS en zet de gegevens als QR-code op een e-ink schermpje. De
+            klant scant, of typt het wachtwoord over dat er in mono bij staat — een
+            laptop zonder camera kan niet scannen. Zo raakt het gezin toch online bij
+            het eerste bezoek, zonder tweede afspraak, en haal ik mijn cijfers.</p>
+          <p>E-ink houdt zijn beeld vast zonder stroom, dus een uitgeschakeld toestel
+            toont je wachtwoord gewoon verder — bij een nette stop wist het scherm
+            zichzelf. En zodra de QR er staat heeft het toestel niets meer te doen: met
+            <code>shutdown_after</code> sluit het zichzelf af, zodat er geen
+            bestandssysteem meer draait op het moment dat je de stekker uittrekt. Dat
+            is wat SD-kaarten sloopt. De QR-grootte is per paneel doorgemeten, van
+            2,13" tot 7,5", zodat het wachtwoord erbij tonen niet ten koste gaat van
+            de scanbaarheid.</p>
           <p class="links"><a href="https://github.com/davidvanc/wpscatcher">Code op GitHub</a></p>
         </div>
         <div class="shots">
