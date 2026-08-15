@@ -195,6 +195,24 @@ h3 {
   border-radius: 6px;
 }
 
+/* Telefoonschermen liggen in een rij onder de tekst in plaats van in een
+   smalle kolom ernaast: ze zijn te hoog om naast een tekstblok te passen. */
+
+.project.stapel { grid-template-columns: minmax(0, 1fr); }
+
+.shots.breed {
+  flex-direction: row;
+  width: auto;
+  gap: 1rem;
+}
+
+.shots.breed figure { flex: 1; min-width: 0; }
+
+.shots.breed img {
+  image-rendering: auto;
+  background: transparent;
+}
+
 .shots figcaption {
   color: var(--muted);
   font-size: 0.8rem;
@@ -252,5 +270,7 @@ footer p { margin: 0; }
     width: auto;
   }
   .shots figure { flex: 1; }
+  /* drie telefoonschermen naast elkaar worden op een gsm onleesbaar klein */
+  .shots.breed { flex-direction: column; }
   .skills > div { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
 }

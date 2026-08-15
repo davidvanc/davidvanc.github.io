@@ -28,7 +28,7 @@
     <section class="projects" aria-labelledby="werk">
       <h2 id="werk">Werk</h2>
 
-      <article class="project">
+      <article class="project stapel">
         <div class="body">
           <h3>NetClean</h3>
           <p class="tag">Android &middot; Kotlin &middot; niet publiek</p>
@@ -36,19 +36,38 @@
             verbind je met het klantnetwerk — en dan staat dat netwerk daarna nog
             weken op je toestel. NetClean scant de wifi-QR van de klant, verbindt,
             en wist het netwerk na een timer weer volledig.</p>
-          <p>De kern zit in één beperking van Android: een app mag alleen netwerken
-            verwijderen die hij <em>zelf</em> heeft aangemaakt. Verbind je één keer
-            via Instellingen, dan is dat netwerk van het systeem en krijgt geen enkele
-            app het er nog af. De app moet de verbinding dus zelf leggen, met
-            <code>WifiNetworkSuggestion</code> — en niet met
-            <code>WifiNetworkSpecifier</code>, want dat geeft de verbinding enkel aan
-            de app die erom vroeg, waardoor je speedtest alsnog over 4G meet.</p>
-          <p>Per netwerk gaan er twee suggesties de deur uit, een WPA2- en een
-            WPA3-variant. Een suggestie koppelt alleen met een radio die exact die
-            beveiliging aanbiedt, en 6 GHz verplicht WPA3-SAE terwijl 5 GHz op
-            nieuwere modems vaak WPA3-only draait. Met alleen WPA2 blijf je op
-            2,4 GHz hangen en meet je trager dan de lijn werkelijk is.</p>
+          <p>Ik heb die app gemaakt omdat het alternatief niet uit te leggen valt. Het
+            wachtwoord van een klant is een persoonsgegeven, en verbind je gewoon via
+            Instellingen, dan blijft dat staan. Na een paar maanden op de baan draag je
+            de sleutel van tientallen woningen in je broekzak, verbindt je toestel er
+            vanzelf opnieuw mee wanneer je toevallig in die straat bent, en gaat bij
+            verlies of diefstal de hele lijst mee.</p>
+          <p>De AVG vraagt niet meer te bewaren dan nodig, en niet langer dan nodig.
+            Voor een meting van tien minuten is "voor altijd" moeilijk te verdedigen.
+            Dus legt de app de verbinding zelf — alleen dan mag ze die achteraf ook
+            weer opruimen — en zet ze er een timer op. Is die om, dan is het netwerk
+            weg zonder dat iemand eraan moet denken.</p>
+          <p>Er is ook een logboek, want "het staat er niet meer op" moet je kunnen
+            tonen. Dat logboek bevat klantnetwerknamen met tijdstippen en is daarmee
+            zelf een persoonsgegeven, dus verdwijnen de regels na een instelbaar
+            aantal dagen vanzelf. Bewust zonder wisknop: een spoor dat je zelf kan
+            uitvegen bewijst niets. Voor de zekerheid zit er daarnaast één knop die
+            alles opruimt wat de app ooit heeft aangemaakt.</p>
           <p class="note">Vier talen: Nederlands, Frans, Engels, Duits. Code op aanvraag.</p>
+        </div>
+        <div class="shots breed">
+          <figure>
+            <img src="assets/img/netclean-start.png" alt="Startscherm van NetClean met de melding dat er geen klantnetwerk actief is en drie knoppen: QR-code scannen, netwerk kiezen en handmatig invoeren" loading="lazy" width="500" height="810">
+            <figcaption>startscherm</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/netclean-instellingen.png" alt="Instellingen met taalkeuze, de duur van de sessie in minuten en hoe lang het logboek bewaard blijft" loading="lazy" width="500" height="810">
+            <figcaption>instellingen</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/netclean-logboek.png" alt="Logboek met per regel verbonden of verwijderd, een tijdstip en de netwerknaam" loading="lazy" width="500" height="810">
+            <figcaption>logboek — netwerknamen vervangen</figcaption>
+          </figure>
         </div>
       </article>
 
