@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>David D'Haeyer — systeem- en netwerkbeheer</title>
-<meta name="description" content="Portfolio van David D'Haeyer. Laatstejaars graduaat Systeem- en Netwerkbeheer, regio Waregem. Projecten in Linux, netwerken, Python en Android.">
+<title>David Van Cauwenberge — systeem- en netwerkbeheer</title>
+<meta name="description" content="Portfolio van David Van Cauwenberge. Laatstejaars graduaat Systeem- en Netwerkbeheer, regio Waregem. Projecten in Linux, netwerken, Python en Android.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>🔌</text></svg>">
 <link rel="stylesheet" href="assets/style.css">
@@ -14,7 +14,7 @@
 
   <header class="top">
     <div class="titles">
-      <h1>David D'Haeyer</h1>
+      <h1>David Van Cauwenberge</h1>
       <p class="lede">Laatstejaars graduaat Systeem- en Netwerkbeheer (Odisee).
         Ik bouw dingen die een probleem oplossen dat ik zelf tegenkwam — meestal
         op Linux, meestal met een netwerk erbij.</p>
@@ -98,6 +98,25 @@
             <a href="https://davidvanc.github.io/noordzee-temperatuur/">Bekijk de site</a>
             <a href="https://github.com/davidvanc/noordzee-temperatuur">Code op GitHub</a>
           </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="body">
+          <h3>AI Software Factory</h3>
+          <p class="tag">Python &middot; Docker &middot; SQLite</p>
+          <p>Een experiment: je beschrijft in één zin welke microservice je wil, en
+            een reeks agents plant de architectuur, schrijft de code, bouwt er een
+            Docker-image van, draait de tests en laat een laatste model oordelen of
+            het goed genoeg is. Keurt die het goed, dan gaat het naar GitHub. Faalt
+            een poging, dan krijgt de volgende de testoutput als feedback mee.</p>
+          <p>Het interessantste is wat er <em>uit</em> gegaan is. De eerste opzet had
+            aparte VM's voor orchestrator, workers en opslag, met een Redis-queue
+            ertussen. Dat is allemaal weg: je hebt het enkel nodig om taken parallel
+            te verdelen, en dat is zinloos voor iets dat je een paar keer per jaar
+            draait. Nu is het één Python-proces dat alles op volgorde doet, met een
+            SQLite-bestand als geheugen.</p>
+          <p class="links"><a href="https://github.com/davidvanc/ai-factory">Code op GitHub</a></p>
         </div>
       </article>
 
