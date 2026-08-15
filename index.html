@@ -30,15 +30,24 @@
       <article class="project">
         <div class="body">
           <h3>Thuis-serverpark</h3>
-          <p class="tag">Debian &middot; Docker &middot; SSH &middot; netwerk</p>
-          <p>Een Debian-VM met een mediastack in Docker (Plex, Radarr, Prowlarr,
-            SABnzbd), van buiten enkel bereikbaar via SSH-tunnels — geen enkele poort
-            open naar het internet. Onderweg gehouden met de gewone dingen: paden die
-            in de container anders heten dan op de host, downloads die in de verkeerde
-            categorie landen, en een bibliotheek die haperde omdat er stiekem twee
-            versies van hetzelfde bestand in stonden.</p>
-          <p class="note">Geen repo — dit is beheerwerk, geen code. De praktijk
-            achter de theorie van de opleiding.</p>
+          <p class="tag">Ubuntu &middot; Ansible &middot; Docker &middot; netwerk</p>
+          <p>Eén Ubuntu-VM die negen containers draait — Plex, de *arr-suite, twee
+            downloadclients, DuckDNS en Netdata — met twee schijven van 7,3 TB
+            eronder. Draaiend gehouden met de gewone dingen: paden die in de container
+            anders heten dan op de host, downloads die in de verkeerde categorie
+            landen, en een bibliotheek die haperde omdat er stiekem twee versies van
+            hetzelfde bestand in stonden.</p>
+          <p>Interessanter dan de stack is wat ermee gebeurd is. Dit was lang "ik heb
+            thuis wat draaien": een compose-bestand dat ik met de hand bijwerkte, en de
+            rest zat in mijn hoofd. Nu staat de gewenste toestand in git, verdeeld over
+            rollen — basisinstellingen, schijven aangekoppeld op UUID, Docker met
+            logrotatie, een ufw-beleid dat alleen de nodige poorten opent, de stack
+            zelf, en een dagelijkse back-up met bewaartermijn. Opnieuw opzetten is
+            schijven aankoppelen en één commando draaien.</p>
+          <p>Er hoort een aparte controleplaybook bij die achteraf nagaat of alles ook
+            echt draait, en een runbook voor wanneer er iets stuk is. Dat laatste staat
+            er omdat je op zo'n moment geen zin hebt om na te denken.</p>
+          <p class="note">Repo nog niet publiek. Graag getoond in een gesprek.</p>
         </div>
       </article>
 
