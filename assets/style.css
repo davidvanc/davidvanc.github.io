@@ -207,6 +207,16 @@ h3 {
   background: transparent;
 }
 
+/* Schermafbeeldingen in liggend formaat staan onder elkaar over de volle
+   breedte: naast elkaar wordt de tekst erop onleesbaar. */
+
+.shots.vol { width: auto; }
+
+.shots.vol img {
+  image-rendering: auto;
+  background: #000;
+}
+
 .shots figcaption {
   color: var(--muted);
   font-size: 0.8rem;
@@ -266,5 +276,6 @@ footer p { margin: 0; }
   .shots figure { flex: 1; }
   /* drie telefoonschermen naast elkaar worden op een gsm onleesbaar klein */
   .shots.breed { flex-direction: column; }
+  .shots.vol { flex-direction: column; }
   .skills > div { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
 }
