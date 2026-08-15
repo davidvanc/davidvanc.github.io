@@ -1,0 +1,256 @@
+/* Portfolio David D'Haeyer
+   Eén kolom, lange leesregel voor de tekst en smallere kolom voor de
+   schermafbeeldingen ernaast. Dezelfde neutrale grijzen als noordzee-temperatuur,
+   met één accentkleur voor links. Beide modes zijn apart gekozen, niet omgeklapt. */
+
+:root {
+  color-scheme: light;
+
+  --surface: #fcfcfb;
+  --plane: #f9f9f7;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --hairline: rgba(11, 11, 11, 0.12);
+  --accent: #1c5cab;
+  --accent-soft: rgba(28, 92, 171, 0.1);
+
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "Cascadia Mono", Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface: #1a1a19;
+    --plane: #0d0d0d;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --hairline: rgba(255, 255, 255, 0.12);
+    --accent: #7fb0ee;
+    --accent-soft: rgba(127, 176, 238, 0.12);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #1a1a19;
+  --plane: #0d0d0d;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --muted: #898781;
+  --hairline: rgba(255, 255, 255, 0.12);
+  --accent: #7fb0ee;
+  --accent-soft: rgba(127, 176, 238, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--plane);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* kop */
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.6rem;
+}
+
+.lede {
+  margin: 0 0 0.6rem;
+  max-width: 36rem;
+  color: var(--ink-2);
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.theme-toggle {
+  flex: none;
+  margin-left: auto;
+  background: var(--surface);
+  color: var(--ink-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.7rem;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--ink); }
+
+/* secties */
+
+h2 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  font-weight: 600;
+  margin: 3rem 0 1.25rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.25rem;
+}
+
+/* projecten */
+
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.75rem;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.project p { margin: 0 0 0.8rem; }
+.project p:last-child { margin-bottom: 0; }
+
+.tag {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  padding-top: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.shots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 13rem;
+}
+
+.shots figure { margin: 0; }
+
+.shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+}
+
+.shots figcaption {
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+}
+
+/* vaardigheden */
+
+.skills {
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.skills > div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.skills > div:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.skills dt { color: var(--muted); font-size: 0.95rem; }
+.skills dd { margin: 0; color: var(--ink-2); }
+
+/* contact */
+
+.contact {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+footer p { margin: 0; }
+
+@media (max-width: 640px) {
+  .wrap { padding-top: 2rem; }
+  .project {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.25rem;
+  }
+  .shots {
+    flex-direction: row;
+    width: auto;
+  }
+  .shots figure { flex: 1; }
+  .skills > div { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+}

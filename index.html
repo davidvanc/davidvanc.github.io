@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David D'Haeyer — systeem- en netwerkbeheer</title>
+<meta name="description" content="Portfolio van David D'Haeyer. Laatstejaars graduaat Systeem- en Netwerkbeheer, regio Waregem. Projecten in Linux, netwerken, Python en Android.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>🔌</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="titles">
+      <h1>David D'Haeyer</h1>
+      <p class="lede">Laatstejaars graduaat Systeem- en Netwerkbeheer (Odisee).
+        Ik bouw dingen die een probleem oplossen dat ik zelf tegenkwam — meestal
+        op Linux, meestal met een netwerk erbij.</p>
+      <p class="meta">Regio Waregem &middot; op zoek naar werk en een stageplaats</p>
+    </div>
+    <button class="theme-toggle" id="theme" type="button" aria-label="Wissel tussen licht en donker">Donker</button>
+  </header>
+
+  <main>
+
+    <section class="projects" aria-labelledby="werk">
+      <h2 id="werk">Werk</h2>
+
+      <article class="project">
+        <div class="body">
+          <h3>NetClean</h3>
+          <p class="tag">Android &middot; Kotlin &middot; niet publiek</p>
+          <p>Bij een klantbezoek moet je meten op <em>hun</em> wifi, niet op 4G. Dus
+            verbind je met het klantnetwerk — en dan staat dat netwerk daarna nog
+            weken op je toestel. NetClean scant de wifi-QR van de klant, verbindt,
+            en wist het netwerk na een timer weer volledig.</p>
+          <p>De kern zit in één beperking van Android: een app mag alleen netwerken
+            verwijderen die hij <em>zelf</em> heeft aangemaakt. Verbind je één keer
+            via Instellingen, dan is dat netwerk van het systeem en krijgt geen enkele
+            app het er nog af. De app moet de verbinding dus zelf leggen, met
+            <code>WifiNetworkSuggestion</code> — en niet met
+            <code>WifiNetworkSpecifier</code>, want dat geeft de verbinding enkel aan
+            de app die erom vroeg, waardoor je speedtest alsnog over 4G meet.</p>
+          <p>Per netwerk gaan er twee suggesties de deur uit, een WPA2- en een
+            WPA3-variant. Een suggestie koppelt alleen met een radio die exact die
+            beveiliging aanbiedt, en 6 GHz verplicht WPA3-SAE terwijl 5 GHz op
+            nieuwere modems vaak WPA3-only draait. Met alleen WPA2 blijf je op
+            2,4 GHz hangen en meet je trager dan de lijn werkelijk is.</p>
+          <p class="note">Vier talen: Nederlands, Frans, Engels, Duits. Code op aanvraag.</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="body">
+          <h3>wpscatcher</h3>
+          <p class="tag">Raspberry Pi Zero 2 W &middot; Python &middot; e-ink</p>
+          <p>Een router met een WPS-knop geeft je een verbinding, maar geen wachtwoord
+            dat je kan doorgeven. wpscatcher verbindt bij het opstarten via WPS en zet
+            de verkregen gegevens als QR-code op een e-ink schermpje. Scannen is de
+            snelle weg; het wachtwoord staat er in mono voluit bij, want een desktop
+            zonder camera kan niet scannen.</p>
+          <p>Twee details die het bruikbaar maken. E-ink houdt zijn beeld vast zonder
+            stroom, dus een uitgeschakeld toestel toont je wachtwoord gewoon verder —
+            bij een nette stop wist het scherm zichzelf. En zodra de QR er staat heeft
+            het toestel niets meer te doen: met <code>shutdown_after</code> sluit het
+            zichzelf af, zodat er geen bestandssysteem meer draait op het moment dat
+            je de stekker uittrekt. Dat is wat SD-kaarten sloopt.</p>
+          <p>De QR-grootte is per paneel doorgemeten (2,13" tot 7,5"), zodat het
+            wachtwoord erbij tonen niet ten koste gaat van de scanbaarheid.</p>
+          <p class="links"><a href="https://github.com/davidvanc/wpscatcher">Code op GitHub</a></p>
+        </div>
+        <div class="shots">
+          <figure>
+            <img src="assets/img/scherm-zoeken.png" alt="E-ink scherm met de tekst WPS zoeken en het aantal pogingen" loading="lazy">
+            <figcaption>zoekt</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/scherm-qr.png" alt="E-ink scherm met een QR-code, de netwerknaam en het wachtwoord" loading="lazy">
+            <figcaption>gevonden</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="body">
+          <h3>Noordzee-temperatuur</h3>
+          <p class="tag">Statische site &middot; JavaScript &middot; GitHub Actions</p>
+          <p>De zeewatertemperatuur van de Noordzee per maand, met de laatste vijf jaar
+            over elkaar en het normaal van 1991&ndash;2020 als grijze stippellijn
+            ernaast. Zo zie je in één oogopslag of een jaar warm of koud uitvalt.</p>
+          <p>Geen build-stap en geen dependencies: de data staat als JSON in de repo,
+            een kilobyte per plek, en een GitHub Action haalt elke ochtend de
+            maandgemiddelden op bij NOAA (OISST v2.1). De grafiek is met de hand
+            getekende SVG.</p>
+          <p class="links">
+            <a href="https://davidvanc.github.io/noordzee-temperatuur/">Bekijk de site</a>
+            <a href="https://github.com/davidvanc/noordzee-temperatuur">Code op GitHub</a>
+          </p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="body">
+          <h3>Installatie-USB voor oude pc's</h3>
+          <p class="tag">Ubuntu autoinstall &middot; Bash &middot; niet publiek</p>
+          <p>Een oude pc die op Windows niet meer vooruit te branden is, draait op
+            Linux vaak nog jaren mee. Alleen is de installatie telkens hetzelfde
+            halfuur klikwerk. Deze USB-stick doet dat onbemand: één antwoordbestand,
+            partities, taal, tijdzone, gebruiker en een basisset software, en de pc
+            staat gebruiksklaar.</p>
+          <p class="note">Privé-repo, wordt in een VM getest voor hij op echt oud
+            ijzer gaat. Graag getoond in een gesprek.</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="body">
+          <h3>Thuis-serverpark</h3>
+          <p class="tag">Debian &middot; Docker &middot; SSH &middot; netwerk</p>
+          <p>Een Debian-VM met een mediastack in Docker (Plex, Radarr, Prowlarr,
+            SABnzbd), van buiten enkel bereikbaar via SSH-tunnels — geen enkele poort
+            open naar het internet. Onderweg gehouden met de gewone dingen: paden die
+            in de container anders heten dan op de host, downloads die in de verkeerde
+            categorie landen, en een bibliotheek die haperde omdat er stiekem twee
+            versies van hetzelfde bestand in stonden.</p>
+          <p class="note">Geen repo — dit is beheerwerk, geen code. De praktijk
+            achter de theorie van de opleiding.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <section aria-labelledby="kunnen">
+      <h2 id="kunnen">Waar ik mee werk</h2>
+      <dl class="skills">
+        <div>
+          <dt>Systemen</dt>
+          <dd>Linux (Debian, Ubuntu), Windows, VM's op Hyper-V, Docker, onbemande
+            installaties met autoinstall</dd>
+        </div>
+        <div>
+          <dt>Netwerk</dt>
+          <dd>Wifi (WPA2/WPA3, 2,4&ndash;6 GHz), SSH-tunnels, DNS, routering,
+            Cisco Packet Tracer</dd>
+        </div>
+        <div>
+          <dt>Code</dt>
+          <dd>Python, Bash, PowerShell, Kotlin voor Android, HTML/CSS/JavaScript
+            zonder framework</dd>
+        </div>
+        <div>
+          <dt>Gereedschap</dt>
+          <dd>Git en GitHub Actions, Kubernetes-basis, SQL om er iets uit te vragen</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <p>Ik zoek werk in IT en een stageplaats in de regio Waregem. Een mailtje
+        volstaat, ik antwoord dezelfde dag.</p>
+      <ul class="contact">
+        <li><a href="mailto:davidvanc@proton.me">davidvanc@proton.me</a></li>
+        <li><a href="https://github.com/davidvanc">github.com/davidvanc</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Deze pagina is met de hand geschreven: geen framework, geen build-stap,
+      geen trackers.</p>
+  </footer>
+
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
