@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>David Van Cauwenberge — systeem- en netwerkbeheer</title>
-<meta name="description" content="Portfolio van David Van Cauwenberge. Laatstejaars graduaat Systeem- en Netwerkbeheer, regio Waregem. Projecten in Linux, netwerken, Python en Android.">
+<meta name="description" content="Portfolio van David Van Cauwenberge. Laatstejaars graduaat Systeem- en Netwerkbeheer. Projecten in Linux, netwerken, Python en Android.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>🔌</text></svg>">
 <link rel="stylesheet" href="assets/style.css">
@@ -26,6 +26,63 @@
 
     <section class="projects" aria-labelledby="werk">
       <h2 id="werk">Werk</h2>
+
+      <article class="project">
+        <div class="body">
+          <h3>Thuis-serverpark</h3>
+          <p class="tag">Debian &middot; Docker &middot; SSH &middot; netwerk</p>
+          <p>Een Debian-VM met een mediastack in Docker (Plex, Radarr, Prowlarr,
+            SABnzbd), van buiten enkel bereikbaar via SSH-tunnels — geen enkele poort
+            open naar het internet. Onderweg gehouden met de gewone dingen: paden die
+            in de container anders heten dan op de host, downloads die in de verkeerde
+            categorie landen, en een bibliotheek die haperde omdat er stiekem twee
+            versies van hetzelfde bestand in stonden.</p>
+          <p class="note">Geen repo — dit is beheerwerk, geen code. De praktijk
+            achter de theorie van de opleiding.</p>
+        </div>
+      </article>
+
+      <article class="project stapel">
+        <div class="body">
+          <h3>Installatie-USB voor oude pc's</h3>
+          <p class="tag">Ubuntu autoinstall &middot; Bash &middot; Xfce &middot; niet publiek</p>
+          <p>Sinds Windows 10 in oktober 2025 zijn laatste update kreeg, krijg ik bij
+            klanten steeds dezelfde vraag: de laptop doet het nog prima, maar Windows
+            11 wil er niet op — wat nu? Bijna altijd blijkt surfen en mailen alles te
+            zijn wat ze ermee doen. En bijna altijd willen ze de schijf helemaal leeg,
+            want de oude rommel mag weg.</p>
+          <p>Dat is telkens hetzelfde halfuur klikwerk. Deze USB-stick doet het
+            onbemand: Ubuntu met een lichte Xfce-desktop, waarbij één antwoordbestand
+            taal, toetsenbord, partities, tijdzone en gebruiker regelt. In het
+            opstartmenu staan twee wegen — alles wissen, of de opslagstap zelf doen
+            wanneer er data of een dubbele opstart moet blijven.</p>
+          <p>Alle pakketten staan op de stick zelf, dus de installatie heeft geen
+            internet nodig — wat scheelt op een machine waar de wifi pas achteraf
+            werkt. Wat erop komt is wat een gewone gebruiker nodig heeft: browser,
+            mail, kantoor, PDF, printen en scannen, en de Belgische eID.</p>
+          <p>Dit hoort strikt genomen niet bij mijn opdracht. Ik doe het omdat het me
+            weinig tijd kost — de stick doet het werk terwijl ik iets anders afwerk —
+            en omdat de klant er wel degelijk mee geholpen is. Een laptop die anders
+            bij het grofvuil belandt, doet daarna gewoon weer wat ervan gevraagd
+            wordt.</p>
+          <p class="note">Getest en in gebruik. Privé-repo, graag getoond in een
+            gesprek.</p>
+        </div>
+        <div class="shots vol">
+          <figure>
+            <img src="assets/img/oudepc-bootmenu.png" alt="Opstartmenu met vijf keuzes, waarvan AUTO-WIPE voor een volledig automatische installatie en ASSISTED om zelf de partities te kiezen" loading="lazy" width="750" height="450">
+            <figcaption>twee wegen in het opstartmenu: alles wissen, of de opslagstap zelf doen</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/oudepc-offline.png" alt="Melding bij de eerste start: lokale pakketbron aanwezig, de installatie verloopt volledig offline" loading="lazy" width="1024" height="110">
+            <figcaption>de pakketten komen van de stick, dus er is geen internet nodig</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/oudepc-bureaublad.jpg" alt="Het bureaublad na installatie: Xfce in het Nederlands met een prullenbak, een afsluitknop en een knop Hulp op afstand" loading="lazy" width="1024" height="768">
+            <figcaption>het resultaat, met de knop <em>Hulp op afstand</em> links</figcaption>
+          </figure>
+        </div>
+      </article>
 
       <article class="project stapel">
         <div class="body">
@@ -154,63 +211,6 @@
             draait. Nu is het één Python-proces dat alles op volgorde doet, met een
             SQLite-bestand als geheugen.</p>
           <p class="links"><a href="https://github.com/davidvanc/ai-factory">Code op GitHub</a></p>
-        </div>
-      </article>
-
-      <article class="project stapel">
-        <div class="body">
-          <h3>Installatie-USB voor oude pc's</h3>
-          <p class="tag">Ubuntu autoinstall &middot; Bash &middot; Xfce &middot; niet publiek</p>
-          <p>Sinds Windows 10 in oktober 2025 zijn laatste update kreeg, krijg ik bij
-            klanten steeds dezelfde vraag: de laptop doet het nog prima, maar Windows
-            11 wil er niet op — wat nu? Bijna altijd blijkt surfen en mailen alles te
-            zijn wat ze ermee doen. En bijna altijd willen ze de schijf helemaal leeg,
-            want de oude rommel mag weg.</p>
-          <p>Dat is telkens hetzelfde halfuur klikwerk. Deze USB-stick doet het
-            onbemand: Ubuntu met een lichte Xfce-desktop, waarbij één antwoordbestand
-            taal, toetsenbord, partities, tijdzone en gebruiker regelt. In het
-            opstartmenu staan twee wegen — alles wissen, of de opslagstap zelf doen
-            wanneer er data of een dubbele opstart moet blijven.</p>
-          <p>Alle pakketten staan op de stick zelf, dus de installatie heeft geen
-            internet nodig — wat scheelt op een machine waar de wifi pas achteraf
-            werkt. Wat erop komt is wat een gewone gebruiker nodig heeft: browser,
-            mail, kantoor, PDF, printen en scannen, en de Belgische eID.</p>
-          <p>Dit hoort strikt genomen niet bij mijn opdracht. Ik doe het omdat het me
-            weinig tijd kost — de stick doet het werk terwijl ik iets anders afwerk —
-            en omdat de klant er wel degelijk mee geholpen is. Een laptop die anders
-            bij het grofvuil belandt, doet daarna gewoon weer wat ervan gevraagd
-            wordt.</p>
-          <p class="note">Getest en in gebruik. Privé-repo, graag getoond in een
-            gesprek.</p>
-        </div>
-        <div class="shots vol">
-          <figure>
-            <img src="assets/img/oudepc-bootmenu.png" alt="Opstartmenu met vijf keuzes, waarvan AUTO-WIPE voor een volledig automatische installatie en ASSISTED om zelf de partities te kiezen" loading="lazy" width="750" height="450">
-            <figcaption>twee wegen in het opstartmenu: alles wissen, of de opslagstap zelf doen</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/img/oudepc-offline.png" alt="Melding bij de eerste start: lokale pakketbron aanwezig, de installatie verloopt volledig offline" loading="lazy" width="1024" height="110">
-            <figcaption>de pakketten komen van de stick, dus er is geen internet nodig</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/img/oudepc-bureaublad.jpg" alt="Het bureaublad na installatie: Xfce in het Nederlands met een prullenbak, een afsluitknop en een knop Hulp op afstand" loading="lazy" width="1024" height="768">
-            <figcaption>het resultaat, met de knop <em>Hulp op afstand</em> links</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="body">
-          <h3>Thuis-serverpark</h3>
-          <p class="tag">Debian &middot; Docker &middot; SSH &middot; netwerk</p>
-          <p>Een Debian-VM met een mediastack in Docker (Plex, Radarr, Prowlarr,
-            SABnzbd), van buiten enkel bereikbaar via SSH-tunnels — geen enkele poort
-            open naar het internet. Onderweg gehouden met de gewone dingen: paden die
-            in de container anders heten dan op de host, downloads die in de verkeerde
-            categorie landen, en een bibliotheek die haperde omdat er stiekem twee
-            versies van hetzelfde bestand in stonden.</p>
-          <p class="note">Geen repo — dit is beheerwerk, geen code. De praktijk
-            achter de theorie van de opleiding.</p>
         </div>
       </article>
 
