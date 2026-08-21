@@ -142,6 +142,48 @@
         </div>
       </article>
 
+      <article class="project">
+        <div class="body">
+          <h3>SMS doorsturen</h3>
+          <p class="tag">Android &middot; Kotlin &middot; publiek</p>
+          <p>Werkberichten komen binnen op het ene toestel en ik loop met het andere op
+            zak. Voor oproepen bestaat daar al veertig jaar een knop voor &mdash;
+            doorschakelen &mdash; maar voor SMS biedt geen enkele operator dat aan. Deze
+            app doet het alsnog: één schakelaar, en elk binnenkomend
+            bericht gaat meteen door naar een ander nummer.</p>
+          <p>Een doorgestuurde SMS vertrekt met jouw eigen nummer als afzender &mdash;
+            zo werkt het protocol, daar valt niet aan te tornen. Het echte nummer van
+            de afzender moet dus in de tekst zelf. Dat teken vooraan is bewust
+            <code>&gt;&gt;</code> en geen sierlijk pijltje: een bericht met enkel tekens
+            uit het GSM-alfabet past 160 tekens per deel, maar één teken
+            daarbuiten zet het geheel om naar UCS-2 en dan is het er nog 70. Eén mooi
+            karakter zou elk doorgestuurd bericht dus dubbel zo duur maken.</p>
+          <p>Er zitten drie sloten tegen een lus in, want een lus kost hier per ronde
+            geld. Een bericht gaat niet door als het van het doorstuurnummer zelf komt,
+            niet als de tekst al met <code>&gt;&gt;</code> begint, en niet meer zodra
+            een instelbare uurgrens bereikt is. Dat eerste slot is intussen in het echt
+            in werking getreden, toen ik bij het testen een bericht vanaf het
+            doelnummer stuurde: overgeslagen, niets verstuurd.</p>
+          <p>Een app die berichten meeleest en doorstuurt heeft dezelfde vorm als
+            stalkerware. Daar heb ik het ontwerp naar gezet: <strong>deze app kan niet
+            stiekem zijn</strong>. Zolang doorsturen aan staat, staat er een melding in
+            de balk die je niet kan wegvegen. Er is geen verborgen modus, geen manier om
+            het pictogram te verbergen en geen schermvergrendeling om iets af te
+            schermen. Wie de telefoon vasthoudt ziet in één blik dat het
+            aan staat en naar welk nummer het gaat.</p>
+          <p>Verder vraagt de app <code>RECEIVE_SMS</code> en niet <code>READ_SMS</code>:
+            alleen wat binnenkomt terwijl het aan staat passeert, je bestaande berichten
+            blijven voor haar onleesbaar. De inhoud van een bericht wordt nergens
+            bewaard. Het logboek houdt enkel afzender, tijdstip en uitkomst bij, en ruimt
+            zichzelf na een instelbaar aantal dagen op.</p>
+          <p class="note">Alleen echte SMS, geen MMS en geen RCS. Dat laatste is geen
+            keuze maar een grens: de RCS-API van Android zit achter een afgeschermde
+            lijst waar alleen Google Messages en Samsung Messages op staan, dus geen
+            enkele app van derden kan erbij.</p>
+          <p class="links"><a href="https://github.com/davidvanc/smsdoor">Code op GitHub</a></p>
+        </div>
+      </article>
+
       <article class="project stapel">
         <div class="body">
           <h3>wpscatcher</h3>
