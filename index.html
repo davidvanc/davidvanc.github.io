@@ -273,9 +273,11 @@
             reden is om die escalatie naar het dure model naar voren te halen.</p>
           <p>Wat er <em>uit</em> gegaan is, vond ik achteraf het leerzaamst. De eerste
             opzet had aparte VM's voor orchestrator, workers en opslag, met een
-            Redis-queue ertussen. Dat is allemaal weg: je hebt het enkel nodig om taken
-            parallel te verdelen, en dat is zinloos voor iets dat je een paar keer per
-            jaar draait. Nu is het één Python-proces dat alles op volgorde doet.</p>
+            Redis-queue ertussen. Dat is allemaal weg. Zulke onderdelen heb je nodig om
+            werk te verdelen en een dienst draaiende te houden, en dat is net wat een
+            proefopstelling niet nodig heeft: je zet ze aan wanneer je iets wil
+            uitproberen en daarna weer af. Nu is het één Python-proces dat alles op
+            volgorde doet.</p>
           <p class="links"><a href="https://github.com/davidvanc/ai-factory">Code op GitHub</a></p>
         </div>
       </article>
