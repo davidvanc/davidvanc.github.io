@@ -250,27 +250,32 @@
         <div class="body">
           <h3>AI Software Factory</h3>
           <p class="tag">Python &middot; Docker &middot; SQLite &middot; OpenRouter</p>
-          <p>Een experiment: je beschrijft in één zin welke microservice je wil, en
-            een reeks agents plant de architectuur, schrijft de code, bouwt er een
-            Docker-image van, draait de tests en laat een laatste model oordelen of
-            het goed genoeg is. Keurt die het goed, dan gaat het naar GitHub.</p>
+          <p>Dit begon met een vraag die ik niet uit een handleiding wilde halen: kan
+            je verschillende modellen elk een eigen rol geven en ze samen iets laten
+            bouwen? Niet één model dat alles doet, maar een reeks die elkaars werk
+            oppakt en verbetert. De enige eerlijke manier om daar achter te komen was
+            het zelf bouwen.</p>
+          <p>Je beschrijft in één zin welke microservice je wil. Een planner bedenkt de
+            opzet, een tweede model schrijft de code, er wordt een Docker-image van
+            gebouwd, de tests draaien, en een laatste model oordeelt of het goed genoeg
+            is. Keurt dat goed, dan gaat het naar GitHub.</p>
           <p>Alles loopt via OpenRouter, zodat elke rol zijn eigen model kan krijgen —
-            en dat is waar het interessant wordt, want die modellen kosten niet
-            hetzelfde. Het gewone werk gaat naar de goedkope: Gemini schrijft de code,
-            DeepSeek bouwt en test. Faalt een poging, dan krijgt de volgende de
-            testoutput als feedback mee en probeert dezelfde goedkope opstelling het
-            opnieuw. Pas de láátste poging schakelt over naar het dure model. Je
-            betaalt dus alleen premium voor het geval dat het anders niet zou halen.</p>
-          <p>Wat misging blijft bewaard. Elke fout gaat als les naar een
-            SQLite-bestand, met een teller hoe vaak dat patroon al voorkwam, en bij een
-            volgende opdracht krijgen de agents de relevante lessen op voorhand mee. Na
-            een stuk of tien services maakt het de beginnersfouten niet meer.</p>
-          <p>Het interessantste is wat er <em>uit</em> gegaan is. De eerste opzet had
-            aparte VM's voor orchestrator, workers en opslag, met een Redis-queue
-            ertussen. Dat is allemaal weg: je hebt het enkel nodig om taken parallel
-            te verdelen, en dat is zinloos voor iets dat je een paar keer per jaar
-            draait. Nu is het één Python-proces dat alles op volgorde doet, met een
-            SQLite-bestand als geheugen.</p>
+            en daar wordt het interessant, want die modellen kosten niet hetzelfde. Het
+            gewone werk gaat naar de goedkope: Gemini schrijft de code, DeepSeek bouwt
+            en test. Pas de laatste poging schakelt over naar het dure model. Wat
+            misging blijft bewaard: elke fout gaat als les naar een SQLite-bestand en
+            komt bij een volgende opdracht op voorhand mee.</p>
+          <p>Het antwoord op mijn vraag staat in de cijfers van 31 runs: 22,6&nbsp;%
+            lukte in één keer, 54,8&nbsp;% haalde het uiteindelijk. De lus verdubbelt de
+            slaagkans dus ruwweg — maar niet doordat modellen elkaar overtuigen. Wat
+            werkt, is dat een mislukte poging échte testuitvoer meekrijgt naar de
+            volgende. Geen enkele run haalde het nog na drie pogingen, wat een goede
+            reden is om die escalatie naar het dure model naar voren te halen.</p>
+          <p>Wat er <em>uit</em> gegaan is, vond ik achteraf het leerzaamst. De eerste
+            opzet had aparte VM's voor orchestrator, workers en opslag, met een
+            Redis-queue ertussen. Dat is allemaal weg: je hebt het enkel nodig om taken
+            parallel te verdelen, en dat is zinloos voor iets dat je een paar keer per
+            jaar draait. Nu is het één Python-proces dat alles op volgorde doet.</p>
           <p class="links"><a href="https://github.com/davidvanc/ai-factory">Code op GitHub</a></p>
         </div>
       </article>
