@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>David Van Cauwenberge — systeem- en netwerkbeheer</title>
-<meta name="description" content="Portfolio van David Van Cauwenberge. Laatstejaars graduaat Systeem- en Netwerkbeheer. Projecten in Linux, netwerken, Python en Android.">
+<meta name="description" content="Portfolio van David Van Cauwenberge. Projecten in Linux, netwerken, Python en Android.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>🔌</text></svg>">
 <link rel="stylesheet" href="assets/style.css">
@@ -15,9 +15,8 @@
   <header class="top">
     <div class="titles">
       <h1>David Van Cauwenberge</h1>
-      <p class="lede">Laatstejaars graduaat Systeem- en Netwerkbeheer (Odisee).
-        Ik bouw dingen die een probleem oplossen dat ik zelf tegenkwam — meestal
-        op Linux, meestal met een netwerk erbij.</p>
+      <p class="lede">Ik bouw meestal dingen die een probleem oplossen dat ik zelf
+        tegenkwam, op Linux en vaak met een netwerk erbij.</p>
     </div>
     <button class="theme-toggle" id="theme" type="button" aria-label="Wissel tussen licht en donker">Donker</button>
   </header>
@@ -42,8 +41,9 @@
             rest zat in mijn hoofd. Nu staat de gewenste toestand in git, verdeeld over
             rollen — basisinstellingen, schijven aangekoppeld op UUID, Docker met
             logrotatie, een ufw-beleid dat alleen de nodige poorten opent, de stack
-            zelf, en een dagelijkse back-up met bewaartermijn. Opnieuw opzetten is
-            schijven aankoppelen en één commando draaien.</p>
+            zelf, en een dagelijkse back-up met bewaartermijn. Opnieuw opzetten zou daarmee
+            neerkomen op schijven aankoppelen en hetzelfde commando draaien; het
+            playbook loopt groen tegen de machine zoals hij nu staat.</p>
           <p>Er hoort een aparte controleplaybook bij die achteraf nagaat of alles ook
             echt draait, en een runbook voor wanneer er iets stuk is. Dat laatste staat
             er omdat je op zo'n moment geen zin hebt om na te denken.</p>
@@ -94,7 +94,7 @@
           </figure>
           <figure>
             <img src="assets/img/oudepc-bureaublad.jpg" alt="Het bureaublad na installatie: Xfce in het Nederlands met een prullenbak, een afsluitknop en een knop Hulp op afstand" loading="lazy" width="1024" height="768">
-            <figcaption>het resultaat, met de knop <em>Hulp op afstand</em> links</figcaption>
+            <figcaption>het resultaat: Xfce in het Nederlands</figcaption>
           </figure>
         </div>
       </article>
@@ -148,7 +148,7 @@
           <p class="tag">Android &middot; Kotlin &middot; publiek</p>
           <p>Werkberichten komen binnen op het ene toestel en ik loop met het andere op
             zak. Voor oproepen bestaat daar al veertig jaar een knop voor &mdash;
-            doorschakelen &mdash; maar voor SMS biedt geen enkele operator dat aan. Deze
+            doorschakelen &mdash; maar voor SMS bieden de Belgische operatoren dat niet aan. Deze
             app doet het alsnog: één schakelaar, en elk binnenkomend
             bericht gaat meteen door naar een ander nummer.</p>
           <p>Een doorgestuurde SMS vertrekt met jouw eigen nummer als afzender &mdash;
@@ -178,8 +178,8 @@
             zichzelf na een instelbaar aantal dagen op.</p>
           <p class="note">Alleen echte SMS, geen MMS en geen RCS. Dat laatste is geen
             keuze maar een grens: de RCS-API van Android zit achter een afgeschermde
-            lijst waar alleen Google Messages en Samsung Messages op staan, dus geen
-            enkele app van derden kan erbij.</p>
+            lijst waar in de praktijk alleen Google Messages en Samsung Messages op staan,
+            dus komt een app van derden er niet bij.</p>
           <p class="links"><a href="https://github.com/davidvanc/smsdoor">Code op GitHub</a></p>
         </div>
       </article>
